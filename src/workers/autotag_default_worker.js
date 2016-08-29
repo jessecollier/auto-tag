@@ -1,5 +1,6 @@
 import AWS from 'aws-sdk';
-const AUTOTAG_TAG_NAME = 'AutoTag_Creator';
+const AUTOTAG_TAG_NAME = 'Billing';
+const AUTOTAG_TAG_VALUE = 'null';
 const ROLE_PREFIX = 'arn:aws:iam::';
 const ROLE_SUFFIX = ':role';
 const DEFAULT_STACK_NAME = 'autotag';
@@ -98,7 +99,7 @@ class AutotagDefaultWorker {
   }
 
   getTagValue() {
-    return this.event.userIdentity.arn;
+    return AUTOTAG_TAG_VALUE
   }
 };
 
